@@ -1,6 +1,6 @@
 = Bookie - bets placed by Sinatra
 
-  Copyright (c) 2008 Carlos Gabaldon <carlosgabaldon.com>, released under the MIT license
+  Copyright (c) 2009 Carlos Gabaldon <carlosgabaldon.com>, released under the MIT license
  
   Public Clone URL:  	git://github.com/CarlosGabaldon/bookie.git
  
