@@ -1,0 +1,15 @@
+= Bookie - bets placed by Sinatra
+
+  Copyright (c) 2008 Carlos Gabaldon <carlosgabaldon.com>, released under the MIT license
+ 
+  project page: http://github.com/CarlosGabaldon/my_way/
+  project repo: git://github.com/CarlosGabaldon/my_way.git
+ 
+  bookie - keep'n your links straight:
+  SQLite:     http://www.sqlite.org/
+  Sequel:     http://sequel.rubyforge.org/rdoc/index.html
+  Sinatra:    http://sinatrarb.com/
+  Haml:       http://haml.hamptoncatlin.com/
+  SASS:       http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html
+
+

@@ -1,0 +1,27 @@
+#content
+  %h2 Your bookmarks
+  %label  
+    == You have #{@book_marks.length} bookmarks
+  %br
+  -@book_marks.each do |b|
+    %a{:href => "#{b.link}"} 
+      = b.title
+    %form{:method => "post", :action => "/bookmarks/#{b.id}"}
+      %input{:type => "hidden", :name => "_method", :value => "delete"}
+      %input{:type => "submit", :value => "Delete"}
+    %a{:href => "/bookmarks/#{b.id}"}
+      View
+    %br
+    %br
+  
+  %h2 New Bookmark
+  %form{:method => "post", :action => "/bookmarks/"}
+    %label Title
+    %input{:type => "text", :id => "title", :name => "title", :value => ""}
+    %br
+    %label Link
+    %input{:type => "text", :id => "link", :name => "link", :value => ""}
+    %br
+    %input{:type => "submit", :value => "Add"}
+    
+    
