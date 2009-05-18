@@ -6,8 +6,9 @@
   -@book_marks.each do |b|
     %a{:href => "#{b.link}"} 
       = b.title
-    %form{:method => "post", :action => "/bookmarks/#{b.id}"}
+    %form{:method => "post", :action => "/bookmarks/"}
       %input{:type => "hidden", :name => "_method", :value => "delete"}
+      %input{:type => "hidden", :name => "id", :value => "#{b.id}"}
       %input{:type => "submit", :value => "Delete"}
     %a{:href => "/bookmarks/#{b.id}"}
       View

@@ -20,6 +20,13 @@ get '/bookmarks/:id' do |id|
   haml :view
 end
 
+#edit a bookmark
+get '/bookmarks/:id/edit' do |id|
+  @book_mark = BookMark[id]
+  haml :edit
+  
+end
+
 #create a bookmark
 post '/bookmarks/' do
   title = params[:title]
@@ -38,11 +45,27 @@ end
 
 #update a bookmark
 put '/bookmarks/' do
-  #.. update something ..
+  id = params[:id]
+  unless id == ""
+    title = params[:title]
+    link = params[:link]
+  
+    unless title == "" && link == ""
+      b = BookMark[id]
+      b.title = title
+      b.link = link
+      b.save
+    end
+  end
+  
+  redirect '/' if id == ""
+  redirect "/bookmarks/#{id}"
+  
 end
 
 #delete a bookmark
-delete '/bookmarks/:id' do |id|
+delete '/bookmarks/' do 
+  id = params[:id]
   b = BookMark[id]
   b.destroy
   redirect '/'

@@ -1,0 +1,9 @@
+
+%form{:method => "post", :action => "/bookmarks/"}
+  %input{:type => "hidden", :name => "_method", :value => "put"}
+  %input{:type => "hidden", :name => "id", :id => "id", :value =>"#{@book_mark.id}" }
+  %input{:type => "text", :name => "title", :id => "title", :value =>"#{@book_mark.title}" }
+  %input{:type => "text", :name => "link", :id => "link", :value => "#{@book_mark.link}"}
+  %input{:type => "submit", :value => "Update"}
+%a{:href => "/bookmarks/#{@book_mark.id}"}
+  Back
