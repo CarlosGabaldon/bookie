@@ -1,0 +1,31 @@
+alias :original_directory :directory
+def directory(dir)
+  original_directory dir
+  Rake::Task[dir]
+end
+
+namespace :bookie do
+  task :create_dir => [
+    directory('db'),
+    directory('public'),
+    directory('views'),
+  ]
+  
+  desc "Create the bookie project."
+  task :create_project => :create_dir do
+    view_files = ["edit.haml","error.haml","layout.haml", 
+            "list.haml", "not_found.haml", "view.haml"]
+            
+    rb_files = ["bookmark.rb", "bookmarks.rb"]
+    
+    puts "Creating the bookie project."
+    view_files.each do |f|
+      puts "Creating view file: #{f}"
+      `touch ./views/#{f}`
+    end
+    rb_files.each do |f|
+      puts "Creating ruby file: #{f}"
+      `touch #{f}`
+    end
+  end
+end
