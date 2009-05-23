@@ -4,6 +4,7 @@ def directory(dir)
   Rake::Task[dir]
 end
 
+
 namespace :bookie do
   task :create_dir => [
     directory('db'),
